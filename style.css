@@ -1,0 +1,104 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(9, 2, 65);
+    color: rgb(122, 186, 241);
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+h1, h3{
+    color: rgb(250, 87, 168);
+}
+.container {
+    padding: 20px 20px;
+    height: 450px;
+    width: 450px;
+    position: relative;
+}
+
+.grafik {
+    fill: transparent;
+    /* içi olan ifadenin özelliği */
+    stroke: rgb(122, 186, 241);
+    /* line çizgi rengi */
+    stroke-width: 4px;
+    /* line cizgi kalınlığı */
+}
+
+.item {
+   display:none; /* adamın görünmemesi */
+}
+
+#wrong-letters {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
+#popup-container{
+    background-color: rgba(0, 0, 0, 0.3); /* ana ekranın şefaflaşması */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* display: flex; */
+    display: none; /* js de görünür hale getirildi */
+    align-items: center; /* ekranın ortasında bulunması */
+    justify-content: center;
+
+}
+
+.popup {
+    background-color: aliceblue; 
+    color: rgb(9, 2, 65);
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 17px;
+    box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.1);
+}
+#play-again{
+    background-color: rgb(250, 87, 168, 0.4);
+    color: rgb(9, 2, 65);
+    font-size: 15px;
+}
+
+#word {
+    display: flex;
+    /* aranan kelime yan yana yazar */
+    position: absolute;
+    bottom: 10px; /* container classın içinde alt kısımdan yükseklik verir */
+    left: 50%; /* ortalama */
+    transform: translateX(-50%); /* uzun kelimelerin ortalanması */
+}
+
+.letter {
+    border-bottom: 3px solid rgb(250, 87, 168); /* alt çerceve verir */
+    font-size: 30px;
+    margin: 0 3px;
+    height: 40px;
+    width: 25px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#message{
+    background-color: rgba(0, 0, 0, 0.3);
+    font-size: 20px;
+    border-radius: 5px;
+    padding: 10px 80px;
+    position: absolute;
+    bottom: -280px;
+    transition: transform 0.4s ease-in-out;
+}
+#message.show{
+    transform: translateY(-200px);
+}
